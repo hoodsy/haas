@@ -291,4 +291,3 @@ def network_destroy(networkname):
     network = _must_find(db, model.Network, networkname)
     db.delete(network)
     db.commit()
-
