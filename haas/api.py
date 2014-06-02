@@ -5,7 +5,7 @@ haas.api_server translates between this and HTTP.
 TODO: Spec out and document what sanitization is required.
 """
 
-import model
+from haas import model
 
 class APIError(Exception):
     """An exception indicating an error that should be reported to the user.
@@ -41,7 +41,7 @@ def _must_find(session, cls, name):
     """Raises a NotFoundError if the given object doesn't exist in the datbase.
     Otherwise returns the object 
 
-    This is useful for most of the *_destroy functions.
+    This is useful for most of the *_delete functions.
 
     Arguments:
 
@@ -66,7 +66,7 @@ def user_create(username, password):
     db.commit()
 
 
-def user_destroy(username):
+def user_delete(username):
     """Delete user `username`
 
     If the user does not exist, a NotFoundError will be raised.
@@ -92,7 +92,7 @@ def group_create(groupname):
     db.commit()
 
 
-def group_destroy(groupname):
+def group_delete(groupname):
     """Delete group 'groupname'
 
     If the group does not exist, a NotFoundError will be raised.
@@ -174,7 +174,7 @@ def project_create(projectname):
     db.commit()
 
 
-def project_destroy(projectname):
+def project_delete(projectname):
     """Delete project 'projectname'
 
     If the project does not exist, a NotFoundError will be raised.
@@ -256,7 +256,7 @@ def node_create(nodename):
     db.commit()
 
 
-def node_destroy(nodename):
+def node_delete(nodename):
     """Delete node 'nodename'
 
     If the node does not exist, a NotFoundError will be raised.
@@ -282,7 +282,7 @@ def network_create(networkname):
     db.commit()
 
 
-def network_destroy(networkname):
+def network_delete(networkname):
     """Delete network 'networkname'
 
     If the network does not exist, a NotFoundError will be raised.
