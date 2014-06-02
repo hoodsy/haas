@@ -21,7 +21,6 @@ class DuplicateError(APIError):
     """An exception indicating that a given resource already exists.""" 
 
 
-<<<<<<< HEAD
 def _assert_absent(session, cls, name):
     """Raises a DuplicateError if the given object is already in the database.
 
@@ -55,8 +54,6 @@ def _must_find(session, cls, name):
         raise NotFoundError(cls.__name__ + ': ' + name)
 
 
-=======
->>>>>>> moc/devel
 def user_create(username, password):
     """Create user `username`.
 
@@ -79,7 +76,6 @@ def user_delete(username):
     db.delete(user)
     db.commit()
 
-<<<<<<< HEAD
 
                             # Group Code #
                             ##############
@@ -295,7 +291,3 @@ def network_delete(networkname):
     network = _must_find(db, model.Network, networkname)
     db.delete(network)
     db.commit()
-
-=======
-
->>>>>>> moc/devel
