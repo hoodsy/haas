@@ -20,4 +20,3 @@ def set_access_vlan(port, vlan_id):
 
 	# log info and debug level information
 	switchLogger.debug(vlan_info)
-	return 0
