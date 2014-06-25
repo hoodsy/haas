@@ -9,6 +9,5 @@ import logging, sys
 
 def set_access_vlan(port, vlan_id):
 
-	logging.basicConfig(level=logging.DEBUG)
 	logger = logging.getLogger(__name__)
 	logger.debug(' VLAN_port: '+ str(port) +', VLAN_id: '+ str(vlan_id))
